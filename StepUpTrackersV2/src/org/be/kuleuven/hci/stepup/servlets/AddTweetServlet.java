@@ -1,11 +1,8 @@
 package org.be.kuleuven.hci.stepup.servlets;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.Date;
 import java.util.Enumeration;
 import java.util.Hashtable;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,38 +11,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.be.kuleuven.hci.stepup.model.ActivityStream;
 import org.be.kuleuven.hci.stepup.model.Event;
-import org.be.kuleuven.hci.stepup.model.TwitterHash;
 import org.be.kuleuven.hci.stepup.persistancelayer.EventGoogleDataStore;
-import org.be.kuleuven.hci.stepup.persistancelayer.RestClient;
 
 import org.be.kuleuven.hci.stepup.util.ReadGoogleSpreadSheetChikul13;
-import org.be.kuleuven.hci.stepup.util.StepUpConstants;
-import org.joda.time.DateTime;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import twitter4j.Paging;
 import twitter4j.Query;
 import twitter4j.QueryResult;
-import twitter4j.RateLimitStatus;
 import twitter4j.ResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
-import twitter4j.UserMentionEntity;
 import twitter4j.json.DataObjectFactory;
 
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.google.appengine.api.datastore.Entity;
-import com.google.appengine.api.datastore.FetchOptions;
-import com.google.appengine.api.datastore.Key;
-import com.google.appengine.api.datastore.KeyFactory;
-import com.google.appengine.api.datastore.Text;
+
 import com.google.appengine.api.memcache.ErrorHandlers;
 import com.google.appengine.api.memcache.MemcacheService;
 import com.google.appengine.api.memcache.MemcacheServiceFactory;
@@ -80,7 +63,6 @@ public class AddTweetServlet extends HttpServlet {
 	    Hashtable<String,String> twitterusernames = (Hashtable<String,String>)syncCache.get("twitterusernames");
 		
 
-			//while(!finish){
 		Twitter twitter = new TwitterFactory().getInstance();
         Query query = new Query("%23"+hashtag);
         query.setSinceId(Long.parseLong(since_id));
@@ -94,10 +76,8 @@ public class AddTweetServlet extends HttpServlet {
 			log.severe(e.toString());
 			//return null;
 		} 
-        System.out.println("=======================================================");
         Paging paging = new Paging(1); 
 		paging.setSinceId(Long.parseLong(since_id));
-		//paging.setMaxId(Long.parseLong("309605046696439808"));
         paging.setCount(200);
         Enumeration e = twitterusernames.keys();
 		while( e.hasMoreElements()) {
