@@ -13,7 +13,7 @@ We provide three examples of how to collect data from three services:
 * Blogs
 * Twitter: https://twitter.com/
 * ARLearn: http://portal.ou.nl/web/arlearn
-* 
+
 We summarize what a tracker does in seven steps:
 
 1. fetch information about the services related to the course,,
