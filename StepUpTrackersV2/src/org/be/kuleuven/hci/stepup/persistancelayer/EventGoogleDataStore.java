@@ -41,7 +41,7 @@ public class EventGoogleDataStore {
 		try {
 			eventToString = JSONandEvent.transformFromEvemtToJson(event).toString();
 			System.out.println("Event:"+eventToString);
-			result = RestClient.doPostAuth("http://ariadne.cs.kuleuven.be/wespot-ws/event",eventToString);
+			result = RestClient.doPostAuth("{url data store} ",eventToString);
 			System.out.println("Result:"+result);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
