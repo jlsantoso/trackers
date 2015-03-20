@@ -98,3 +98,16 @@ src: https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/org/
   - We push the data.
 
 #### Update false service
+src: https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/org/be/kuleuven/hci/stepup/servlets/UpdateFalseValuesServlet.java
+
+This is not a tracker, but sometimes the data store (see the beginning) is not available due to the connections problems. What we do is to store those events that didn't reach the datastore in the Google data store. This servlet goes through these events and push them again until it succeed at the task.
+
+#### Generic comments
+
+Please check https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/org/be/kuleuven/hci/stepup/persistancelayer/EventGoogleDataStore.java
+
+Modify the url {url data store} if you want to push the data to the data store. 
+
+Please check https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/org/be/kuleuven/hci/stepup/persistancelayer/RestClient.java
+
+Propably you will need to edit this value {Auth data store} if you want to push the data to the data store. These keys are defined at https://github.com/svencharleer/datastore.
