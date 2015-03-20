@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+	<cron>
+		<url>/cron/updatefalse</url>
+		<description>Update false events</description>
+		<schedule>every 15 minutes</schedule>
+	</cron>	
+	<!-- cron>
+		<url>/cron/addtweet</url>
+		<description>Tweet Fetcher</description>
+		<schedule>every 20 minutes</schedule>
+	</cron-->	
+	<cron>
+		<url>/cron/addrss</url>
+		<description>RssFeed Fetcher</description>
+		<schedule>every 15 minutes</schedule>
+	</cron>
+	<cron>
+		<url>/cron/addarlearn</url>
+		<description>Update ARLearn data</description>
+		<schedule>every 5 minutes</schedule>
+	</cron>
+</cronentries>
