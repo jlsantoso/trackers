@@ -29,7 +29,7 @@ We summarize what a tracker does in seven steps:
 * Journal of Universal Computer Science (http://www.jucs.org/): Under review
 * weSPOT project (D5.3): http://wespot.net/public-deliverables
 
-## I wanna re-use this project, what do I need to now?
+## I wanna re-use this project, what do I need to know?
 
 ### Cron file
 
