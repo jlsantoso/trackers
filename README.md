@@ -27,7 +27,7 @@ We summarize what a tracker does in seven steps:
 ## Related documents/publications/deliverables
 
 * Journal of Universal Computer Science (http://www.jucs.org/): Under review
-* weSPOT project (D5.3): http://wespot.net/public-deliverables
+* weSPOT project (D5.2): http://wespot.net/public-deliverables
 
 ## I wanna re-use this project, what do I need to know?
 
@@ -69,9 +69,32 @@ Three important functions:
   - Notice that you need another key when you request user information to ARLearn - this line RestClient.doGetAuth. Same than before contact the project.
 
 #### Blog Tracker
+src: https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/org/be/kuleuven/hci/stepup/servlets/AddRSSServlet.java
 * Notice that we use rome: http://rometools.github.io/rome/
 * First things first, configure the rome properties file https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/rome.properties
+* What is relevant to know? 
+  - ReadGoogleSpreadSheetThesis14: is in charge of reading a Google spreadsheet where we have all the urls of the blogs. This is an example for a specific course.
+  - ReadingBlogs: contains the different functions to collect blog information. We have two possibilities:
+    + RSS
+    + wordpress API: we access via API instead of RSS because they provide a richer dataset
+* The process:
+  - We generate an ArrayList with all the blogs related to the course (see urlsBlogs variable).
+  - We access to the blog post and the comments feeds separately.
+  - We add the context (i.e.: the course)
+  - We push the data.
+
 
 #### Twitter Tracker
+src: https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/org/be/kuleuven/hci/stepup/servlets/AddTweetServlet.java
 * Notice that we use twitter4j: http://twitter4j.org/en/index.html
 * First things first, configure the twiter properties file https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/twitter4j.properties
+* What is relevant to know? 
+  - ReadGoogleSpreadSheetChikul13: is in charge of reading a Google spreadsheet where we have all the twitter handles related to the course. This is an example for a specific course.
+  - It's important to notice that we process the hashtag of the course and the twitter handles of the students separately. We realised that twitter did not index all the tweets when querying by hashtag. Nevetheless, we wanted to track interaction from externals (i.e: querying the hashtag) and the students tweets querying their timelines and filtering those tweets related to the course.
+* The process:
+  - We generate an ArrayList with all the blogs related to the course (see urlsBlogs variable).
+  - We access to timelines and the hashtag.
+  - We add the context (i.e. the hashtag)
+  - We push the data.
+
+#### Update false service
