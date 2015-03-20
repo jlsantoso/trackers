@@ -108,7 +108,7 @@ public class RestClient {
 	        URL url = new URL(urlString);
 	        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 	        connection.setRequestProperty("Content-Type", "application/json");
-	        connection.setRequestProperty("Authorization","9IywPIjfdlE7gh9T2vj523BTqu2YRkVe");
+	        connection.setRequestProperty("Authorization","{Auth data store}");
 	        connection.setDoOutput(true);
 	        connection.setRequestMethod("POST");
 	        OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
