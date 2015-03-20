@@ -104,10 +104,10 @@ This is not a tracker, but sometimes the data store (see the beginning) is not a
 
 #### Generic comments
 
-Please check https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/org/be/kuleuven/hci/stepup/persistancelayer/EventGoogleDataStore.java
+* Please check https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/org/be/kuleuven/hci/stepup/persistancelayer/EventGoogleDataStore.java
 
 Modify the url {url data store} if you want to push the data to the data store. 
 
-Please check https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/org/be/kuleuven/hci/stepup/persistancelayer/RestClient.java
+* Please check https://github.com/jlsantoso/trackers/blob/master/StepUpTrackersV2/src/org/be/kuleuven/hci/stepup/persistancelayer/RestClient.java
 
 Propably you will need to edit this value {Auth data store} if you want to push the data to the data store. These keys are defined at https://github.com/svencharleer/datastore.
